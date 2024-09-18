@@ -1,33 +1,18 @@
 buildscript {
-
-    extra["minSdkVersion"] = 14
-    extra["compileSdkVersion"] = 29
-    extra["targetSdkVersion"] = 29
-    extra["kotlinVersion"] = "1.3.61"
-
     repositories {
-        mavenCentral()
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        val kotlinVersion = property("kotlinVersion") as String
-        classpath("com.android.tools.build:gradle:3.6.1")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath("com.otaliastudios.tools:publisher:0.1.5")
+        classpath("com.android.tools.build:gradle:7.4.2")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
     }
 }
 
 allprojects {
     repositories {
-        mavenCentral()
         google()
-        jcenter()
+        mavenCentral()
     }
 }
-
-tasks.register("clean", Delete::class) {
-    delete(buildDir)
-}
-
